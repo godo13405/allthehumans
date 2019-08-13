@@ -1,0 +1,53 @@
+$timing: 5s;
+$lines: 3;
+
+.hero {
+    background: $color-primary;
+    color: #fff;
+    height: 45vh;
+    min-height: 260px;
+
+    .inner {
+        position: absolute;
+        right: 0;
+        bottom: 1rem;
+    }
+
+    .tagline {
+        margin-bottom: .6em;
+        @extend h1;
+        color: #111;
+
+        span {
+            display: inline-block;
+            overflow: hidden;
+            max-width: 0;
+            padding: 0;
+            animation: tagline $timing*$lines ease-out infinite;
+
+            @for $i from 2 to ($lines + 1) {
+                &:nth-child(#{$i}) {
+                    animation-delay: $timing * ($i - 1);
+                }
+            }
+        }
+
+    }
+
+}
+
+@keyframes tagline {
+    0% {
+        max-width: 0;
+    }
+
+    10%,
+    20% {
+        max-width: 50em;
+    }
+
+    33%,
+    100% {
+        max-width: 0;
+    }
+}

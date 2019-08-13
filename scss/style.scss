@@ -1,11 +1,26 @@
 @import "vars";
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,700&display=swap');
 
 html,
 body {
     margin: 0;
     padding: 0;
     font-size: 14px;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-family-h;
+    font-weight: 100;
+}
+
+h1 {
+    font-size: 2.6em;
 }
 
 *,
@@ -14,8 +29,26 @@ body {
     box-sizing: border-box;
 }
 
-body {
+.contained {
     width: 100%;
     max-width: $max-width;
     margin: 0 auto;
+    height: 100%;
+    position: relative;
 }
+
+.logo {
+    margin: 0;
+
+    &:after {
+        $size: .6em;
+        content: "";
+        display: inline-block;
+        width: $size;
+        height: $size;
+        margin-left: .4em;
+        background-color: $color-contrast;
+    }
+}
+
+@import "hero";
