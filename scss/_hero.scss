@@ -14,12 +14,13 @@ $lines: 3;
     }
 
     .tagline {
-        margin-bottom: .6em;
+        margin-bottom: 2em;
         @extend h1;
         color: #111;
 
         span {
-            display: inline-block;
+            float: left;
+            display: block;
             overflow: hidden;
             max-width: 0;
             padding: 0;
